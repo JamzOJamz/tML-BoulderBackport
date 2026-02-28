@@ -1,0 +1,19 @@
+Boulder Backport is a mod that backports select visuals (sprites/textures) and audio (sounds, music) from Terraria 1.4.5 back into tModLoader, which for the foreseeable future remains on version 1.4.4. As it may be many more months until a stable tModLoader release for 1.4.5, and even longer for the most popular mods to get ported, why wait to enjoy some of the refreshed and polished content that the update has to offer?
+
+Features:
+- New music tracks from 1.4.5, including new boss tracks for King Slime, Skeletron, Queen Bee, and more
+- 330+ item textures refreshed and polished, alongside 30+ tile textures, 11 NPC textures, and 4 projectile textures
+- Villager portraits! This flagship feature of 1.4.5 has been backported with this mod, adding more flair and personality to your cherished town NPCs
+- Refreshed textures for certain UI elements in the inventory
+- New sound effects from 1.4.5 backported, including a dedicated sound for trashing items and a unique catch sound when reeling in fish while using a Sonar Potion
+- Client-side only, so it won't affect your multiplayer experience or cause desyncs with friends who don't have the mod installed
+- Compatible with resource packs, so you can still use your favorite texture pack alongside it without any issues
+- Vastly configurable through Mod Config, allowing you to toggle/customize specific backports as you see fit
+
+How It Works:
+Boulder Backport sources its assets directly from your local vanilla Terraria 1.4.5 installation, with no assets packaged, embedded, or redistributed with the mod itself. This means you'll need vanilla Terraria installed and updated to 1.4.5 for everything to work, which for most Steam players is already the case! This approach also makes Boulder Backport the most legally sound way to do a project like this. Even a texture pack would require repackaging vanilla assets, which violates Workshop guidelines, whereas this mod simply reads what's already on your machine.
+
+For Developers:
+Boulder Backport supports portraits for custom town NPCs from other mods! To add a portrait for your own NPC, simply place a "YourTownNPC_Portrait.png" file in the same folder as your main "YourTownNPC.png" texture. If your NPC has a Shimmer variant, you can also provide a "YourTownNPC_Shimmer_Portrait.png" alongside it. Portraits are 200x200 pixels. For a reference example, see "Assets/Portrait_Example.png" in this mod's source. Also supported are mod calls to manually register portraits through code - please refer to "BoulderBackport.Calls.cs" in the source for details.
+
+Note: This mod is incompatible with the mod "1.4.5-Styled NPC Portrait System". Compatibility is not planned.

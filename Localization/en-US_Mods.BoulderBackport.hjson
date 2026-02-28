@@ -1,0 +1,107 @@
+Configs: {
+	BackportConfig: {
+		DisplayName: Backport Config
+
+		VanillaTownNPCPortraits: {
+			Label: Vanilla Town NPC Portraits
+			Tooltip: When enabled, portraits for vanilla town NPCs from Terraria 1.4.5 will show up when talking to them.
+		}
+
+		ModdedTownNPCPortraits: {
+			Label: Modded Town NPC Portraits
+			Tooltip: When enabled, portraits for modded town NPCs will show up when talking to them.
+		}
+
+		KingSlimeBossMusic: {
+			Label: King Slime Boss Music
+			Tooltip: When enabled, the King Slime boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		EaterOfWorldsBossMusic: {
+			Label: Eater Of Worlds Boss Music
+			Tooltip: When enabled, the Eater Of Worlds boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		QueenBeeBossMusic: {
+			Label: Queen Bee Boss Music
+			Tooltip: When enabled, the Queen Bee boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		SkeletronBossMusic: {
+			Label: Skeletron Boss Music
+			Tooltip: When enabled, the Skeletron boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		TheTwinsBossMusic: {
+			Label: The Twins Boss Music
+			Tooltip: When enabled, The Twins boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		TheDestroyerBossMusic: {
+			Label: The Destroyer Boss Music
+			Tooltip: When enabled, The Destroyer boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		SkeletronPrimeBossMusic: {
+			Label: Skeletron Prime Boss Music
+			Tooltip: When enabled, the Skeletron Prime boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		LunaticCultistBossMusic: {
+			Label: Lunatic Cultist Boss Music
+			Tooltip: When enabled, the Lunatic Cultist boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		TorchGodBossMusic: {
+			Label: Torch God Boss Music
+			Tooltip: When enabled, the Torch God boss music from Terraria 1.4.5 will play during the fight.
+		}
+
+		TrashItemSound: {
+			Label: Trash Item Sound
+			Tooltip: When enabled, the new sound effect that plays when trashing items in Terraria 1.4.5 will play.
+		}
+
+		SonarPotionSound: {
+			Label: Sonar Potion Sound
+			Tooltip: When enabled, the unique catch sound that plays when reeling in fish while using a Sonar Potion in Terraria 1.4.5 will play.
+		}
+
+		ThunderSounds: {
+			Label: Thunder Sounds
+			Tooltip: When enabled, the new thunder sounds from Terraria 1.4.5 will play during rainstorms.
+		}
+
+		VolumeBalancingChanges: {
+			Label: Volume Balancing Changes
+			Tooltip: When enabled, various volume balancing changes from Terraria 1.4.5 will be applied.
+		}
+
+		GameplayTextures: {
+			Label: Gameplay Textures
+			Tooltip: When enabled, various gameplay textures from Terraria 1.4.5 will be backported, including item, NPC, tile, and projectile textures.
+		}
+
+		UITextures: {
+			Label: UI Textures
+			Tooltip: When enabled, certain UI elements in the game will use their refreshed textures from Terraria 1.4.5.
+		}
+
+		ExtraTextures: {
+			Label: Extra Textures
+			Tooltip: When enabled, backports extra textures from Terraria 1.4.5, such as backgrounds and other miscellaneous visuals.
+		}
+
+		Headers: {
+			Portraits: Portraits
+			Music: Music
+			Sounds: Sounds
+			Textures: Textures
+		}
+	}
+}
+
+Misc: {
+	InactiveMessage: Vanilla installation is not updated to 1.4.5! Boulder Backport will not work and should be disabled.
+	TMLTerrariaVersionIs145Message: tModLoader is already updated to (at least) 1.4.5! Boulder Backport is not needed and should be disabled.
+}
