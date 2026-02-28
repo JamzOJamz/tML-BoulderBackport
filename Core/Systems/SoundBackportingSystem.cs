@@ -17,7 +17,7 @@ public class SoundBackportingSystem : BackportingSystemBase
         "Sounds\\Item_36.xnb",
         "Sounds\\Item_38.xnb"
     ];
-    
+
     private static readonly string[] ThunderSounds =
     [
         "Sounds\\Thunder_0.xnb",
@@ -28,10 +28,10 @@ public class SoundBackportingSystem : BackportingSystemBase
         "Sounds\\Thunder_5.xnb"
     ];
 
+    private bool _hasChangedThunderSoundStyle;
+
     public static SoundStyle SonarPotion { get; private set; }
     public static SoundStyle TrashItem { get; private set; }
-
-    private bool _hasChangedThunderSoundStyle;
 
     public override void Load()
     {
@@ -50,7 +50,7 @@ public class SoundBackportingSystem : BackportingSystemBase
             ref var soundRef = ref Unsafe.AsRef(in SoundID.Thunder);
             soundRef = new SoundStyle("Terraria/Sounds/Thunder_", 0, 6, SoundType.Ambient)
                 { PitchVariance = 0.2f, RerollAttempts = 5, LimitsArePerVariant = true };
-            
+
             _hasChangedThunderSoundStyle = true;
         }
 
@@ -72,7 +72,8 @@ public class SoundBackportingSystem : BackportingSystemBase
                     var c = new ILCursor(il);
 
                     // Locate where we are going to perform our edit
-                    c.GotoNext(i => i.MatchLdfld(typeof(Item).GetField(nameof(Item.favorited))!), i => i.MatchBrtrue(out _),
+                    c.GotoNext(i => i.MatchLdfld(typeof(Item).GetField(nameof(Item.favorited))!),
+                        i => i.MatchBrtrue(out _),
                         i => i.MatchLdcI4(7));
 
                     // Advance the cursor a bit
@@ -107,7 +108,8 @@ public class SoundBackportingSystem : BackportingSystemBase
                     // Inject a delegate to play the new sound effect
                     c.EmitDelegate((int context) =>
                     {
-                        if (BackportConfig.Instance.TrashItemSound && context == 6 && Main.mouseItem.type == ItemID.None)
+                        if (BackportConfig.Instance.TrashItemSound && context == 6 &&
+                            Main.mouseItem.type == ItemID.None)
                             SoundEngine.PlaySound(TrashItem);
                     });
                 }

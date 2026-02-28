@@ -19,7 +19,7 @@ public partial class BoulderBackport
             throw new ArgumentException("Argument 1 must be a string command");
 
         if (!content.Equals("AddPortrait", StringComparison.InvariantCultureIgnoreCase)) return false;
-        
+
         if (args.Length < 3)
             throw new ArgumentException(
                 "AddPortrait requires at least 3 arguments: (string command, int npcType, string texturePath OR Asset<Texture2D> texture, [optional] string shimmerTexturePath OR Asset<Texture2D> shimmerTexture)");
@@ -63,6 +63,5 @@ public partial class BoulderBackport
 
         NPCPortraitSystem.Register(npcType, provider);
         return true;
-
     }
 }

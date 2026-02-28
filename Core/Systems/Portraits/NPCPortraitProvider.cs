@@ -55,7 +55,7 @@ public sealed class NPCPortraitProvider
         _default = ModContent.Request<Texture2D>(assetPath);
         return this;
     }
-    
+
     public NPCPortraitProvider Default(Asset<Texture2D> texture)
     {
         _default = texture;
