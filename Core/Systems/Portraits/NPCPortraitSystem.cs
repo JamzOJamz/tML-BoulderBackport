@@ -194,7 +194,7 @@ public class NPCPortraitSystem : BackportingSystemBase
         var isModded = talkNPC.type >= NPCID.Count;
 
         if ((isModded && !BackportConfig.Instance.ModdedTownNPCPortraits) ||
-            (!isModded && BackportConfig.Instance.VanillaTownNPCPortraits))
+            (!isModded && !BackportConfig.Instance.VanillaTownNPCPortraits))
             return;
 
         if (!Portraits.TryGetValue(talkNPC.type, out var provider))
