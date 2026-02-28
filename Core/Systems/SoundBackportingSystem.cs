@@ -39,13 +39,15 @@ public class SoundBackportingSystem : BackportingSystemBase
         {
             foreach (var path in VolumeBalancedSounds)
             {
-                Mod.Logger.Debug($"Loading new sound effect at {path}");
+                BoulderBackport.Instance.DebugLog($"Loading new sound effect at {path}");
                 SelectBackportContentSource.Add(path);
             }
         }
 
         if (BackportConfig.Instance.ThunderSounds)
         {
+            BoulderBackport.Instance.DebugLog("Loading new thunder sound effects");
+
             // Resize thunder to 6 variants to match the new backported thunder sounds
             ref var soundRef = ref Unsafe.AsRef(in SoundID.Thunder);
             soundRef = new SoundStyle("Terraria/Sounds/Thunder_", 0, 6, SoundType.Ambient)
@@ -56,6 +58,8 @@ public class SoundBackportingSystem : BackportingSystemBase
 
         if (BackportConfig.Instance.TrashItemSound)
         {
+            BoulderBackport.Instance.DebugLog("Loading new trash item sound effect");
+
             // Load new TrashItem sound...
             TrashItem = new SoundStyle("Terraria/Sounds/Custom/trash_item_", 0, 2)
             {
@@ -122,6 +126,8 @@ public class SoundBackportingSystem : BackportingSystemBase
 
         if (BackportConfig.Instance.SonarPotionSound)
         {
+            BoulderBackport.Instance.DebugLog("Loading new sonar potion sound effect");
+
             // Load new SonarPotion sound...
             SonarPotion = new SoundStyle("Terraria/Sounds/Custom/sonar_potion")
             {
@@ -176,12 +182,11 @@ public class SoundBackportingSystem : BackportingSystemBase
 
     public override void Unload()
     {
-        if (_hasChangedThunderSoundStyle)
-        {
-            // Restore thunder to 7 variants to match the original vanilla thunder sounds
-            ref var soundRef = ref Unsafe.AsRef(in SoundID.Thunder);
-            soundRef = new SoundStyle("Terraria/Sounds/Thunder_", 0, 7, SoundType.Ambient)
-                { PitchVariance = 0.2f, RerollAttempts = 6, LimitsArePerVariant = true };
-        }
+        if (!_hasChangedThunderSoundStyle) return;
+
+        // Restore thunder to 7 variants to match the original vanilla thunder sounds
+        ref var soundRef = ref Unsafe.AsRef(in SoundID.Thunder);
+        soundRef = new SoundStyle("Terraria/Sounds/Thunder_", 0, 7, SoundType.Ambient)
+            { PitchVariance = 0.2f, RerollAttempts = 6, LimitsArePerVariant = true };
     }
 }

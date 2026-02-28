@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using BoulderBackport.Content.Configs;
 using BoulderBackport.Content.Sources;
 using BoulderBackport.Core.Systems;
 using ReLogic.OS;
@@ -36,6 +37,10 @@ public partial class BoulderBackport : Mod
         MusicBackportingSystem.EarlyInitialize();
         SelectBackportContentSource.RegisterAutoLifecycle();
     }
+
+    public BoulderBackport() => Instance = this;
+
+    public static BoulderBackport Instance { get; private set; }
 
     internal static BackportingStatus Status { get; private set; }
 
@@ -74,5 +79,11 @@ public partial class BoulderBackport : Mod
             default:
                 break;
         }
+    }
+
+    public void DebugLog(object message)
+    {
+        if (BackportConfig.Instance.VerboseDebugLogging)
+            Logger.Debug(message);
     }
 }

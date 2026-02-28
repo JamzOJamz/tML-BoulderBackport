@@ -17,6 +17,9 @@ public class MusicBackportingSystem : BackportingSystemBase
 
         Array.Resize(ref legacyAudioSystem.AudioTracks, NewMusicID.Count);
         for (var i = NewMusicID.Destroyer; i < NewMusicID.Count; i++)
+        {
+            BoulderBackport.Instance.DebugLog($"Loading music ID {i}");
             legacyAudioSystem.LoadCue(i, $"Music_{i}");
+        }
     }
 }

@@ -504,14 +504,14 @@ public class TextureBackportingSystem : BackportingSystemBase
     {
         if (BackportConfig.Instance.GameplayTextures)
         {
-            Mod.Logger.Debug("Loading new accessory face textures");
+            BoulderBackport.Instance.DebugLog("Loading new accessory face textures");
             SelectBackportContentSource.Add("Images\\Acc_Face_16.xnb");
             SelectBackportContentSource.Add("Images\\Acc_Face_18.xnb");
 
-            // Mod.Logger.Debug("Loading new armor head textures");
+            // BoulderBackport.Instance.DebugLog("Loading new armor head textures");
             // SelectBackportContentSource.Add("Images\\Armor_Head_109.xnb"); // Jim's Helmet is weird in 1.4.5
 
-            Mod.Logger.Debug("Loading new armor leg textures");
+            BoulderBackport.Instance.DebugLog("Loading new armor leg textures");
             // SelectBackportContentSource.Add("Images\\Armor_Legs_60.xnb"); // Jim's Leggings are weird in 1.4.5
             SelectBackportContentSource.Add("Images\\Armor_Legs_83.xnb");
             SelectBackportContentSource.Add("Images\\Armor_Legs_117.xnb");
@@ -524,7 +524,8 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewBuffTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new buff texture for buff ID {id} ({Lang.GetBuffName(id)})");
+                BoulderBackport.Instance.DebugLog(
+                    $"Loading new buff texture for buff ID {id} ({Lang.GetBuffName(id)})");
                 SelectBackportContentSource.Add($"Images\\Buff_{id}.xnb");
             }
 
@@ -532,7 +533,7 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewGlowMaskTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new glow mask texture for glow mask ID {id}");
+                BoulderBackport.Instance.DebugLog($"Loading new glow mask texture for glow mask ID {id}");
                 SelectBackportContentSource.Add($"Images\\Glow_{id}.xnb");
             }
 
@@ -540,7 +541,7 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewGoreTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new gore texture for gore ID {id}");
+                BoulderBackport.Instance.DebugLog($"Loading new gore texture for gore ID {id}");
                 SelectBackportContentSource.Add($"Images\\Gore_{id}.xnb");
             }
 
@@ -548,11 +549,12 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewItemTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new item texture for item ID {id} ({Lang.GetItemNameValue(id)})");
+                BoulderBackport.Instance.DebugLog(
+                    $"Loading new item texture for item ID {id} ({Lang.GetItemNameValue(id)})");
                 SelectBackportContentSource.Add($"Images\\Item_{id}.xnb");
             }
 
-            Mod.Logger.Debug("Loading new mount textures");
+            BoulderBackport.Instance.DebugLog("Loading new mount textures");
             SelectBackportContentSource.Add("Images\\Mount_Minecart.xnb");
             SelectBackportContentSource.Add("Images\\Mount_MinecartWood.xnb");
             SelectBackportContentSource.Add("Images\\Mount_Pigron.xnb");
@@ -561,7 +563,8 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewNPCTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new NPC texture for NPC ID {id} ({Lang.GetNPCNameValue(id)})");
+                BoulderBackport.Instance.DebugLog(
+                    $"Loading new NPC texture for NPC ID {id} ({Lang.GetNPCNameValue(id)})");
                 SelectBackportContentSource.Add($"Images\\NPC_{id}.xnb");
             }
 
@@ -569,7 +572,7 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewProjectileTexturesToLoad)
             {
-                Mod.Logger.Debug(
+                BoulderBackport.Instance.DebugLog(
                     $"Loading new projectile texture for projectile ID {id} ({Lang.GetProjectileName(id).Value})");
                 SelectBackportContentSource.Add($"Images\\Projectile_{id}.xnb");
             }
@@ -578,7 +581,7 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewTileTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new tile texture for tile ID {id}");
+                BoulderBackport.Instance.DebugLog($"Loading new tile texture for tile ID {id}");
                 SelectBackportContentSource.Add($"Images\\Tiles_{id}.xnb");
                 SelectBackportContentSource.Add(
                     $@"Images\Misc\TileOutlines\Tiles_{id}.xnb"); // For smart cursor highlight
@@ -588,19 +591,19 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewWallTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new wall texture for wall ID {id}");
+                BoulderBackport.Instance.DebugLog($"Loading new wall texture for wall ID {id}");
                 SelectBackportContentSource.Add($"Images\\Wall_{id}.xnb");
             }
 
-            Mod.Logger.Debug("Loading new Christmas tree texture");
+            BoulderBackport.Instance.DebugLog("Loading new Christmas tree texture");
             SelectBackportContentSource.Add("Images\\Xmas_0.xnb");
 
-            Mod.Logger.Debug("Loading new armor textures");
+            BoulderBackport.Instance.DebugLog("Loading new armor textures");
             // SelectBackportContentSource.Add(@"Images\Armor\Armor_71.xnb"); // Part of Jim's Breastplate
             SelectBackportContentSource.Add(@"Images\Armor\Armor_99.xnb");
             SelectBackportContentSource.Add(@"Images\Armor\Armor_237.xnb");
 
-            Mod.Logger.Debug("Loading new town NPC textures");
+            BoulderBackport.Instance.DebugLog("Loading new town NPC textures");
             SelectBackportContentSource.Add(@"Images\TownNPCs\Demolitionist_Default.xnb");
             SelectBackportContentSource.Add(@"Images\TownNPCs\SlimeOld_Default_Party.xnb");
             SelectBackportContentSource.Add(@"Images\TownNPCs\SlimeRed_Default_Party.xnb");
@@ -618,25 +621,25 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             foreach (var id in NewNPCHeadTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new NPC head texture for head ID {id}");
+                BoulderBackport.Instance.DebugLog($"Loading new NPC head texture for head ID {id}");
                 SelectBackportContentSource.Add($"Images\\NPC_Head_{id}.xnb");
             }
 
-            Mod.Logger.Debug("Loading new quick stack to chest button textures");
+            BoulderBackport.Instance.DebugLog("Loading new quick stack to chest button textures");
             SelectBackportContentSource.Add("Images\\ChestStack_0.xnb", @"Images\UI\ChestStack_0.xnb");
             SelectBackportContentSource.Add("Images\\ChestStack_1.xnb", @"Images\UI\ChestStack_1.xnb");
 
-            Mod.Logger.Debug("Loading new crafting menu toggle button textures");
+            BoulderBackport.Instance.DebugLog("Loading new crafting menu toggle button textures");
             SelectBackportContentSource.Add(@"Images\UI\Craft_Toggle_0.xnb");
             SelectBackportContentSource.Add(@"Images\UI\Craft_Toggle_1.xnb");
             SelectBackportContentSource.Add(@"Images\UI\Craft_Toggle_2.xnb");
             SelectBackportContentSource.Add(@"Images\UI\Craft_Toggle_3.xnb");
 
-            Mod.Logger.Debug($"Total of {NewCursorTexturesToLoad.Length} new cursor textures to load");
+            BoulderBackport.Instance.DebugLog($"Total of {NewCursorTexturesToLoad.Length} new cursor textures to load");
 
             foreach (var id in NewCursorTexturesToLoad)
             {
-                Mod.Logger.Debug($"Loading new cursor texture for cursor ID {id}");
+                BoulderBackport.Instance.DebugLog($"Loading new cursor texture for cursor ID {id}");
                 SelectBackportContentSource.Add($@"Images\UI\Cursor_{id}.xnb");
             }
 
@@ -644,17 +647,17 @@ public class TextureBackportingSystem : BackportingSystemBase
             // Should this be backported? If so, need to check decompiled 1.4.5 to see how the new rows are used and adjust drawing code accordingly if necessary
             // SelectBackportContentSource.Add(@"Images\UI\Glyphs_0.xnb");
 
-            Mod.Logger.Debug("Loading new sort inventory button textures");
+            BoulderBackport.Instance.DebugLog("Loading new sort inventory button textures");
             SelectBackportContentSource.Add(@"Images\UI\Sort_0.xnb");
             SelectBackportContentSource.Add(@"Images\UI\Sort_1.xnb");
 
-            Mod.Logger.Debug("Loading new spawn point map indicator texture");
+            BoulderBackport.Instance.DebugLog("Loading new spawn point map indicator texture");
             SelectBackportContentSource.Add(@"Images\UI\SpawnPoint.xnb");
         }
 
         if (BackportConfig.Instance.ExtraTextures)
         {
-            Mod.Logger.Debug("Loading new background textures");
+            BoulderBackport.Instance.DebugLog("Loading new background textures");
             SelectBackportContentSource.Add("Images\\Background_53.xnb");
             SelectBackportContentSource.Add("Images\\Background_54.xnb");
             SelectBackportContentSource.Add("Images\\Background_55.xnb");
@@ -669,7 +672,7 @@ public class TextureBackportingSystem : BackportingSystemBase
             // SelectBackportContentSource.Add("Images\\Background_283.xnb");
             // SelectBackportContentSource.Add("Images\\Background_284.xnb");
 
-            Mod.Logger.Debug("Loading new extra textures");
+            BoulderBackport.Instance.DebugLog("Loading new extra textures");
 
             // Credit scenes
             SelectBackportContentSource.Add("Images\\Extra_235.xnb");
@@ -677,11 +680,11 @@ public class TextureBackportingSystem : BackportingSystemBase
 
             for (var i = 0; i < TextureAssets.Moon.Length; i++)
             {
-                Mod.Logger.Debug($"Loading new moon texture for style {i}");
+                BoulderBackport.Instance.DebugLog($"Loading new moon texture for style {i}");
                 SelectBackportContentSource.Add($"Images\\Moon_{i}.xnb");
             }
 
-            Mod.Logger.Debug("Loading new special moon textures");
+            BoulderBackport.Instance.DebugLog("Loading new special moon textures");
             SelectBackportContentSource.Add("Images\\Moon_Pumpkin.xnb");
             SelectBackportContentSource.Add("Images\\Moon_Smiley.xnb");
             SelectBackportContentSource.Add("Images\\Moon_Snow.xnb");

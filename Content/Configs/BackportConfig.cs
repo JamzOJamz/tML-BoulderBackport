@@ -74,4 +74,8 @@ public class BackportConfig : ModConfig
     [DefaultValue(true)]
     [ReloadRequired]
     public bool ExtraTextures;
+    
+    [Header("Advanced")]
+    [DefaultValue(false)]
+    public bool VerboseDebugLogging;
 }

@@ -91,12 +91,18 @@ Configs: {
 			Label: Extra Textures
 			Tooltip: When enabled, backports extra textures from Terraria 1.4.5, such as backgrounds and other miscellaneous visuals.
 		}
+		
+		VerboseDebugLogging: {
+            Label: Verbose Debug Logging
+            Tooltip: When enabled, Boulder Backport will log detailed information about which assets are being backported. This is intended for debugging purposes and may generate a large amount of log output.
+        }
 
 		Headers: {
 			Portraits: Portraits
 			Music: Music
 			Sounds: Sounds
 			Textures: Textures
+			Advanced: Advanced
 		}
 	}
 }
