@@ -61,7 +61,7 @@ public partial class BoulderBackport : Mod
 
         // Fallback for non-Windows platforms (or if Windows version check fails):
         // Check for an item introduced in 1.4.5
-        var itemPath = Path.Combine(vanillaContentDirectory, "Item_6144.xnb");
+        var itemPath = Path.Combine(vanillaContentDirectory, "Images", "Item_6144.xnb");
         return System.IO.File.Exists(itemPath);
     }
 
