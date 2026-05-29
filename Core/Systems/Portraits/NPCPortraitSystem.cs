@@ -14,13 +14,10 @@ namespace BoulderBackport.Core.Systems;
 
 public class NPCPortraitSystem : BackportingSystemBase
 {
-    private static Asset<Texture2D> PortraitBackground;
+    private static Asset<Texture2D> _portraitBackground;
     private static readonly Dictionary<int, NPCPortraitProvider> Portraits = new();
     private static float _animationTimer;
     private static string _lastNPCChatText;
-
-    static NPCPortraitSystem() => PortraitBackground =
-        ModContent.Request<Texture2D>("Terraria/Images/TownNPCs/Portraits/Portrait_Window");
 
     public override void Load()
     {
@@ -45,6 +42,8 @@ public class NPCPortraitSystem : BackportingSystemBase
             DrawNPCPortrait();
         };
 
+        _portraitBackground =
+            ModContent.Request<Texture2D>("Terraria/Images/TownNPCs/Portraits/Portrait_Window");
         RegisterDefaultPortraits();
     }
 
@@ -223,7 +222,7 @@ public class NPCPortraitSystem : BackportingSystemBase
 
         var chatBack = new Color(200, 200, 200, 200);
         var spriteBatch = Main.spriteBatch;
-        var bg = PortraitBackground.Value;
+        var bg = _portraitBackground.Value;
 
         spriteBatch.Draw(bg, drawPos, bg.Frame(), chatBack,
             0f, bg.Size() / 2, Vector2.One, SpriteEffects.None, 0f);
